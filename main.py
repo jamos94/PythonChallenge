@@ -7,6 +7,8 @@
     # left off editing menu functionality
     # menu was directing to options with out selection and not directing back to the menu
     # add menus to all other fucntions else statments as needed
+    # conditional statement for random name generator
+    # conditional statement for treasure map
 
 import true_love_cal
 import random_number_calc
@@ -41,6 +43,10 @@ while True:
         pizza_delivery()
     elif selection == '6':
         leap_year()
+    #elif selection == '7:
+        #you_pay()
+    #elif selection == '8:
+        #treasure_map()
     else:
         print("Sorry, that's not a valid entry.")
 
