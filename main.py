@@ -11,32 +11,35 @@
     # conditional statement for treasure map
 
 import true_love_cal
-import random_number_calc
+import treasure_map
 import pizza_delivery
 import ticket_booth
 import leap_year
+import rock_paper_scissor
 
-print("Welcome to Jessica's Simple Python Programs")
+# print("Welcome to Jessica's Simple Python Programs")
+
 def menu():
-    select = input("Choose a menu option by entering the corresponding number: ")
-    print("1. Love Calulator") 
-    print("2. Random Numbers")
-    print("3. Ticket Booth")
-    print("4. Coin Toss")
-    print("5. Pizza Delivery")
-    print("Leap Year Calculator")
-
-
-while True:
-    options = menu.keys()
-    options.sort()
-    for entry in options:
-        print(entry, menu[entry])
-    selection = input("Please select a number: ")
+    print('''Welcome to Jessica's Simple Python Programs\n
+    -------------------------- 
+     1. Love Calulator\n     
+     2. Random Numbers\n   
+     3. Ticket Booth\n  
+     4. Coin Toss\n
+     5. Pizza Delivery\n
+     6. Leap Year Calculator\n
+    --------------------------\n''')
+    selection = input("Choose a menu option by entering the corresponding number: ")
+# while True:
+#     options = menu.keys()
+#     options.sort()
+#     for entry in options:
+#         print(entry, menu[entry])
+    # selection = input("Please select a number: ")
     if selection == '1':
         true_love_cal()
     elif selection == '2':
-        random_number_calc()
+        treasure_map()
     elif selection == '3':
         ticket_booth()
     elif selection == '5':
@@ -50,4 +53,4 @@ while True:
     else:
         print("Sorry, that's not a valid entry.")
 
-menu()
+print(menu())
