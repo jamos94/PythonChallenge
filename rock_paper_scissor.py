@@ -1,7 +1,6 @@
-#who loses, who wins?
-# hwo will the computer choose the shape?
-# how will i meet the requirements?
-
+# TODO: 
+    # create function to call 
+    # add conditional statement to return into function or back to menu
 import random
 rock = '''
     _______
