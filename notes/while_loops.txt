@@ -1,0 +1,22 @@
+QUICK REFRESHER (:
+WHILE LOOP
+    - continues while a condition is true
+------------------------------
+while something_is_true:
+    #do something until false
+------------------------------
+
+--> negation
+------------------------------
+while not something_is_true:
+    #do something until false
+------------------------------
+- use when you want to carry out a functionality until a condition is met
+
+-- > infinite loops 
+    -----------------
+    while 5 > 3:
+        print("hi!")
+    -----------------
+    - "eek" hi will repeat to infinity!!! 0-0
+    - watch out for this when using while loops

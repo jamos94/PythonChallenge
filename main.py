@@ -24,10 +24,9 @@ def menu():
     -------------------------- 
      1. Love Calulator\n     
      2. Random Numbers\n   
-     3. Ticket Booth\n  
-     4. Coin Toss\n
-     5. Pizza Delivery\n
-     6. Leap Year Calculator\n
+     3. Ticket Booth\n 
+     4. Pizza Delivery\n
+     5. Leap Year Calculator\n
     --------------------------\n''')
     selection = input("Choose a menu option by entering the corresponding number: ")
 # while True:

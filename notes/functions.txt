@@ -1,0 +1,34 @@
+QUICK REFRESHER (:
+
+- we use functions every day to complete programs while coding
+   - for a list of python functions: docs.python.org/3/library/functions.html
+
+We've used built-in functions but what about creating our own?
+
+def --> definition
+
+def my_function():  
+    print("Hello")
+    print("Bye")
+
+- running code at this point, nothing will happen. the function must be called
+- call the function after the definition or it will not recognize it
+
+my_function() <-- "calling" function
+
+def my_function():
+    #do this
+    #then do this
+    #finally this (:
+
+- functions allows us to bundle instructions together!
+
+--> INDENTAION
+- all code that is indented inside a function is included (like a loop or if/for statement)
+- think about a file inside of a folder. Each file inside a folder are indented 
+    - if a file is pulled from a folder it is independent of the folder
+
+--> spaces or tabs? 
+    - for python --> SPACES ! 
+        - four spaces between indentation
+PYTHON STYLE GUIDE: python.org/dev/peps/pep-0008/#indentation
