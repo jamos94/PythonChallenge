@@ -2,36 +2,10 @@
     # create function to call 
     # add conditional statement to return into function or back to menu
 import random
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
-
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
-
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
+from art import image_choice
 
 #Write your code below this line 👇
 
-image_choice = [rock, paper, scissors]
 
 player_choice = int(input("What do you chose? Type 0 for Rock, 1 for Paper or 2 for scissors.\n"))
 
