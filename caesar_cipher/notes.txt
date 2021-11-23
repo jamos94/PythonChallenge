@@ -1,0 +1,11 @@
+- encoding messages as early as julius ceasar's day 
+- encoding messages by shifting the alphabet
+
+a b c d e --- > b c d e f 
+
+typing "encode" to start program to code messages
+type message to encode
+type "decode" to decode
+
+yes or no to continue (:
+
