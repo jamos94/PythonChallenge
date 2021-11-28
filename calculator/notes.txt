@@ -1,0 +1,17 @@
+FUNCTIONS W/ OUTPUTS
+
+# recall we have writen
+# functions with input
+def my_function(something):
+    # do this with something
+    # then do this
+    # finally do this
+
+# make a function & save to a vaiable
+def my_function():
+    result = 2 * 3
+    # the result is the output
+    # output = return
+    return result
+def my_function
+    return 2 * 3
