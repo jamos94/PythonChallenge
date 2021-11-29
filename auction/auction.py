@@ -6,6 +6,7 @@ another_bidder = True
 bids = {}
 # create a function to determine the highest bidder
 def find_highest_bidder(bid_record):
+    """determines the highest bidder"""
     highest_bid = 0
     for bidder in bid_record:
         amount_bid = bid_record[bidder]

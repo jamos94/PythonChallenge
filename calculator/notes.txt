@@ -15,3 +15,14 @@ def my_function():
     return result
 def my_function
     return 2 * 3
+
+-------------
+DOC STRINGS:
+-------------
+Document a function by using three quotations on the first line after the declaration
+
+def example()
+    """Example DOCSTRINGS"""
+    if DOCSTRINGS == True:
+        # function has a written description (:
+        # this is good for future reference
