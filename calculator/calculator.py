@@ -1,6 +1,7 @@
 # calculator! 
 from art import logo
-print(logo)
+# import decimal
+# from decimal import Decimal
 def add(n1, n2):
     """Addition"""
     return n1 + n2
@@ -24,31 +25,25 @@ operations = {
     '/': divide
     }
 
-def continue_calc(answer,num3,final_answer):
-    chosen_operation = input("Pick an operation: ")
-    call_function = operations[chosen_operation]
-    num3 = int(input("pick another number: "))
-    final_answer = call_function(num1,num2)
-    print(f"{answer} {chosen_operation} {num3} = {final_answer}")
+def calculator():
+    print(logo)
 
-num1 = int(input("what is your first number? "))
-# print out operations in list
-for i in operations:
-    print(i)
+    num1 = float(input("what is your first number? "))
+    # print out operations in list
+    for i in operations:
+        print(i)
+    continue_calc = True
+    while continue_calc == True:
+        chosen_operation = input("Pick an operation: ")
+        num2 = float(input("pick another number: "))
+        call_function = operations[chosen_operation]
+        answer = call_function(num1,num2)
+        print(f"{num1} {chosen_operation} {num2} = {answer}")
 
+        if input(f"type 'y' to continue calculating with {answer}, or 'n' to start a new calculation.\n").lower() == 'y':
+            num1 = answer
+        else: 
+            calculator() # 'recursion' recalls the calculator to start fresh with new numbers to calculator
+            continue_calc = False
 
-chosen_operation = input("Pick an operation: ")
-num2 = int(input("pick another number: "))
-call_function = operations[chosen_operation]
-answer = call_function(num1,num2)
-print(f"{num1} {chosen_operation} {num2} = {answer}")
-
-continue_calc = input(f"type 'y' to continue calculating with {answer}, or 'n' to exit").lower()
-# if continue_calc == 'y':
-#     using_calc = True
-#     while using_calc == True:
-#         continue_calc(answer)
-#     else:
-#         using_calc == False
-# else:
-#     print("thanks for using, see you next time")
+calculator()
