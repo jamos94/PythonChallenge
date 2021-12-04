@@ -1,59 +1,65 @@
 from art import logo
-from random import choices, choice
+from random import choice
 print(logo)
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-blackjack = 21
+def deal_card():
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = choice(cards)
+    return card
+
+def checkforAce():
+    if score[1] > 21:
+        for card in player_hand:
+            if card == 11:
+                score[1]-= 10
+                if score[1] > 21:
+                    print("You busted. Sorry you lose.")
+                if score[1] < 21:
+                    return score[1]
+    if score[0] > 21:
+        for card in dealer_hand:
+            if card == 11:
+                score[0]-= 10
+                if score[0] > 21:
+                    print("Dealer busted, you win.")
+                if score[0] <21:
+                    return score[0]
+
+def hit_me():
+    hit_me = input("Would you like another card? Enter yes or no").lower()
+    if hit_me == "yes":
+        player_hand.append(deal_card())
+        print(player_hand)
+    else:
+        while dealer_hand > 21:
+            dealer_hand.append(deal_card())
+
 # deal out 2 starting cards for player and dealer
-player_starting = choices(cards, k = 2)
-dealer_starting = choices(cards, k = 2)
+player_hand = []
+dealer_hand = []
+player_hand.append(deal_card())
+player_hand.append(deal_card())
 
-print(f"You were delt {player_starting}.")
-print(f"The dealer was delt {dealer_starting}.")
+dealer_hand.append(deal_card())
+dealer_hand.append(deal_card())
 
-# add their cards to determine their score
-player_score = player_starting[0] + player_starting[1]
-dealer_score = dealer_starting[0] + dealer_starting[1]
+print(f"You were delt {player_hand}.\nThe dealer was delt {dealer_hand}.")
 
-scores = {dealer_score, player_score}
-print(scores)
-#if score == blackjack (11 + 10)
-for score in scores:
-    if score == blackjack:
-        print(f"Black jack!")
-    if score != blackjack:
-        hit = print(input("Would you like another card? Y/N").lower())
-        if hit == 'y':
-            scores[0] += choice(cards)
-            print(scores[0])
-        if hit == 'n':
-            print("huh?")
-# if player has blackjack
-
-# if score > blackjack
-    # if card == 11
-        # card = 1
-        # if score > 21
-            # you lose
-        # if score < blackjack
-            # hit_me = True
-    # else: 
-        # you lose
+score = [
+    sum(dealer_hand),
+    sum(player_hand)
+        ] 
 
 
-# while hit_me = True
-    # deal = print(input("Would you like to draw another card? Y/N: ")).lower()
-    # if deal == "y"
-        # deal another card and find new score
-    # deal == "n"
-        # deal computer while score is < 17
-        # if computer score > blackjack
-            # you win
-            # hit_me = False
-        #hit_me = False
+if score[1] == 21:
+    print("BlackJack, player wins")
+if score[0] == 21:
+    print("BlackJack, dealer wins")
+if score[0] == 21 and score[1] == 21:
+    print("It's a draw")
 
-# if user score is > computer score
-    # you win
-# elif userscore = computerscore
-    # draw
-#else: 
-    # you lose
+if score[0] > 21 or score[1] > 21:
+    checkforAce()
+    if keep_playing == True:
+
+print(f"Player score: {score[1]}\n Dealer score: {score[0]}")
+
