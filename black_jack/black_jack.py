@@ -1,6 +1,7 @@
 from art import logo
 from random import choice
 print(logo)
+keep_playing = True
 def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = choice(cards)
@@ -59,7 +60,9 @@ if score[0] == 21 and score[1] == 21:
 
 if score[0] > 21 or score[1] > 21:
     checkforAce()
-    if keep_playing == True:
-
+elif score[0] < 21 or score[1] < 21:
+    deal_card()
+    print(score)
+    
 print(f"Player score: {score[1]}\n Dealer score: {score[0]}")
 
