@@ -1,5 +1,5 @@
-from art import logo
 from random import choice
+from art import logo
 print(logo)
 keep_playing = True
 def deal_card():
@@ -25,14 +25,17 @@ def checkforAce():
                 if score[0] <21:
                     return score[0]
 
+# hit me deals a random card at request of the user or computer
 def hit_me():
     hit_me = input("Would you like another card? Enter yes or no").lower()
     if hit_me == "yes":
         player_hand.append(deal_card())
-        print(player_hand)
+        score(player_hand)
+        print(score[1])
     else:
-        while dealer_hand > 21:
+        while score[0] < 21:
             dealer_hand.append(deal_card())
+        
 
 # deal out 2 starting cards for player and dealer
 player_hand = []
@@ -43,26 +46,39 @@ player_hand.append(deal_card())
 dealer_hand.append(deal_card())
 dealer_hand.append(deal_card())
 
+# print cards for first round **TODO** set dealer_hand to dealer_hand[0]
+# when code compiles correctly
 print(f"You were delt {player_hand}.\nThe dealer was delt {dealer_hand}.")
 
-score = [
-    sum(dealer_hand),
-    sum(player_hand)
-        ] 
+def sum_of(dealer_hand, player_hand, score):
+    for i in player_hand:
+       score[0] += i
+    for i in dealer_hand:
+        score[0] += i
+
+score = {
+    int(dealer_hand),
+    int(player_hand)
+}
 
 
-if score[1] == 21:
-    print("BlackJack, player wins")
-if score[0] == 21:
-    print("BlackJack, dealer wins")
-if score[0] == 21 and score[1] == 21:
-    print("It's a draw")
+
+while score[0] < 21 or score[1] < 21:
+    hit_me()
+    print(score)
+
 
 if score[0] > 21 or score[1] > 21:
     checkforAce()
-elif score[0] < 21 or score[1] < 21:
-    deal_card()
-    print(score)
-    
+if score[1] == 21:
+    print("BlackJack, player wins")
+    keep_playing == False
+if score[0] == 21:
+    print("BlackJack, dealer wins")
+    keep_playing == False
+if sum.score[0] == 21 and score[1] == 21:
+    print("It's a draw")
+    keep_playing == False    
 print(f"Player score: {score[1]}\n Dealer score: {score[0]}")
+
 
