@@ -3,8 +3,8 @@ from art import logo
 print(logo)
 keep_playing = True
 
-"""Returns a random card from the deck"""
 def deal_card():
+    """Returns a random card from the deck"""
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = choice(cards)
     return card
@@ -17,6 +17,7 @@ def checkforAce():
             if score[1] > 21:
                 print("You busted. Sorry you lose.")
             if score[1] < 21:
+                hit_me()
                 return score[1]
     for card in dealer_hand:
         if card == 11:
@@ -25,6 +26,7 @@ def checkforAce():
             if score[0] > 21:
                 print("Dealer busted, you win.")
             if score[0] <21:
+                hit_me()
                 return score[0]
 
 # hit me deals a random card at request of the user or computer
@@ -38,6 +40,17 @@ def hit_me():
         while score[0] < 21:
             dealer_hand.append(deal_card())
         
+def compare(score):
+    if score[0] > 21 or score[1] > 21:
+        checkforAce()
+    elif score[1] == 21:
+        return "BlackJack, player wins"
+    elif score[0] == 21:
+        return "BlackJack, dealer wins"
+    elif sum.score[0] == 21 and score[1] == 21:
+        return "It's a draw"
+    else:
+        return "you lose"
 
 # deal out 2 starting cards for player and dealer
 player_hand = []
@@ -52,14 +65,13 @@ for _ in range(2):
 print(f"You were delt {player_hand}.\nThe dealer was delt {dealer_hand}.")
 
 
-"""Tallies the score in both hands"""
-def sum_of(dealer_hand, player_hand, score):
+def calculate_score(dealer_hand, player_hand, score):
+    """Tallies the score in both hands"""
     for i in player_hand:
        score[0] += i
     for i in dealer_hand:
         score[0] += i
 
-"""holds the score that is tallied"""
 score = {
     int(dealer_hand),
     int(player_hand)
@@ -69,18 +81,6 @@ while score[0] < 21 or score[1] < 21:
     hit_me()
     print(score)
 
-
-if score[0] > 21 or score[1] > 21:
-    checkforAce()
-if score[1] == 21:
-    print("BlackJack, player wins")
-    keep_playing == False
-if score[0] == 21:
-    print("BlackJack, dealer wins")
-    keep_playing == False
-if sum.score[0] == 21 and score[1] == 21:
-    print("It's a draw")
-    keep_playing == False    
-print(f"Player score: {score[1]}\n Dealer score: {score[0]}")
+print(compare(score[0], score[1]))
 
 
